@@ -28,9 +28,23 @@ Die Implementierung legt besonderen Wert auf Speicherstabilität, Robustheit und
 
 ---
 
-## 🛠️ Kompilieren
+## 🚀 Quick Start
 
-**Voraussetzung:** GCC (C11)
+```bash
+git clone https://github.com/DEINUSERNAME/data-structures-c.git
+cd data-structures-c
+make
+./app
+```
+---
+
+## 🔧 Requirements
+
+- GCC (C11 oder höher)
+- Make
+- Linux oder macOS (getestet)
+
+## 🛠️ Build
 
 ```
 +------------------+---------------------------+
@@ -222,5 +236,6 @@ data-structures-c/
 
 ---
 
-*Viel Erfolg beim Lernen!* 🚀
+## 📄 License
 
+This project is licensed under the MIT License.
