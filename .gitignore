@@ -1,0 +1,11 @@
+# Build output
+app
+*.o
+*.out
+
+# macOS debug files
+*.dSYM
+.DS_Store
+
+# Editor
+.vscode/
