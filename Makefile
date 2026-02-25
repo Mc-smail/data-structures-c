@@ -9,7 +9,7 @@ all: $(APP)
 
 $(APP): main.c src/list.c src/stack.c src/queue.c
 	$(CC) $(CFLAGS) -o $(APP) main.c src/list.c src/stack.c src/queue.c
-	
+
 run: $(APP)
 	./$(APP)
 
