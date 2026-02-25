@@ -2,6 +2,24 @@
 
 ---
 
+## 🚀 Features
+
+- Implementation of core data structures in C
+- Memory-safe dynamic allocation
+- Modular architecture (header/source separation)
+- AddressSanitizer enabled build
+- Unit tests for validation
+
+## ⏱️ Time Complexity
+
+| Data Structure  | Operation      | Complexity |
+|-----------------|----------------|------------|
+| Stack           | push / pop     | O(1)       |
+| Queue           | enqueue/dequeue| O(1)       |
+| Linked List     | search         | O(n)       |
+
+---
+
 ## 📋 Projektbeschreibung
 
 Dieses Projekt implementiert grundlegende Datenstrukturen in der Programmiersprache C.
@@ -48,7 +66,7 @@ make
 
 ```
 +------------------+---------------------------+
-|     Befehl       |       Beschreibung         |
+|     Befehl       |       Beschreibung        |
 +==================+===========================+
 | make             | Projekt kompilieren       |
 +------------------+---------------------------+
@@ -61,6 +79,14 @@ make
 ```
 
 > 💡 Das Projekt wird mit aktivierter Speicherprüfung (`-fsanitize=address`) kompiliert, um Memory-Leaks und ungültige Speicherzugriffe zu erkennen.
+
+## 🧪 Testing
+
+Run all tests with:
+
+```bash
+make test
+```
 
 ---
 
@@ -104,19 +130,19 @@ typedef struct Node {
 +------------------------------------------+---------------------------------------------------------------+
 |                Funktion                  |                     Beschreibung                              |
 +==========================================+===============================================================+
-| list_push_front(head, value)            | Fügt Element am Anfang ein, gibt neuen Kopf zurück            |
+| list_push_front(head, value)            | Fügt Element am Anfang ein, gibt neuen Kopf zurück             |
 +------------------------------------------+---------------------------------------------------------------+
 | list_push_back(head, value)             | Fügt Element am Ende ein                                       |
 +------------------------------------------+---------------------------------------------------------------+
-| list_find(head, value)                  | Sucht nach Wert, gibt Pointer oder NULL zurück               |
+| list_find(head, value)                  | Sucht nach Wert, gibt Pointer oder NULL zurück                 |
 +------------------------------------------+---------------------------------------------------------------+
-| list_delete(head, value)                | Löscht erstes Vorkommen des Wertes                           |
+| list_delete(head, value)                | Löscht erstes Vorkommen des Wertes                             |
 +------------------------------------------+---------------------------------------------------------------+
-| list_length(head)                       | Gibt Anzahl der Elemente zurück                               |
+| list_length(head)                       | Gibt Anzahl der Elemente zurück                                |
 +------------------------------------------+---------------------------------------------------------------+
-| list_print(head)                         | Gibt Liste aus: [10, 20, 30]                                 |
+| list_print(head)                         | Gibt Liste aus: [10, 20, 30]                                  |
 +------------------------------------------+---------------------------------------------------------------+
-| list_free(head)                         | Gibt gesamten Speicher frei                                  |
+| list_free(head)                         | Gibt gesamten Speicher frei                                    |
 +------------------------------------------+---------------------------------------------------------------+
 ```
 
@@ -139,21 +165,21 @@ typedef struct Stack {
 +------------------------------------------+---------------------------------------------------------------+
 |                Funktion                  |                     Beschreibung                              |
 +==========================================+===============================================================+
-| stack_new()                             | Initialisiert neuen Stack, reserviert Speicher                |
+| stack_new()                             | Initialisiert neuen Stack, reserviert Speicher                 |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_push(stack, value)                | Legt Element oben auf den Stack                               |
+| stack_push(stack, value)                | Legt Element oben auf den Stack                                |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_pop(stack, &value)                | Entfernt oberstes Element, gibt Wert zurück                   |
+| stack_pop(stack, &value)                | Entfernt oberstes Element, gibt Wert zurück                    |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_peek(stack, &value)               | Gibt oberstes Element zurück, ohne es zu entfernen            |
+| stack_peek(stack, &value)               | Gibt oberstes Element zurück, ohne es zu entfernen             |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_is_empty(stack)                   | Überprüft, ob Stack leer ist                                 |
+| stack_is_empty(stack)                   | Überprüft, ob Stack leer ist                                   |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_length(stack)                     | Gibt aktuelle Elementanzahl zurück                           |
+| stack_length(stack)                     | Gibt aktuelle Elementanzahl zurück                             |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_print(stack)                       | Gibt Stack aus: [10, 20, 30]                                 |
+| stack_print(stack)                       | Gibt Stack aus: [10, 20, 30]                                  |
 +------------------------------------------+---------------------------------------------------------------+
-| stack_free(stack)                       | Gibt gesamten Speicher frei                                  |
+| stack_free(stack)                       | Gibt gesamten Speicher frei                                    |
 +------------------------------------------+---------------------------------------------------------------+
 ```
 
@@ -180,13 +206,13 @@ typedef struct Queue {
 
 ```
 +----------------------------+---------------------------------------------------------------+
-|          Aspekt            |                        Beschreibung                          |
+|          Aspekt            |                        Beschreibung                           |
 +============================+===============================================================+
 | Zeitkomplexität            | O(1) für Enqueue und Dequeue                                  |
 +----------------------------+---------------------------------------------------------------+
-| Erweiterung               | Automatische Speichererweiterung bei Bedarf                  |
+| Erweiterung               | Automatische Speichererweiterung bei Bedarf                    |
 +----------------------------+---------------------------------------------------------------+
-| Speichereffizienz         | Optimierte Nutzung des vorhandenen Speicherbereichs          |
+| Speichereffizienz         | Optimierte Nutzung des vorhandenen Speicherbereichs            |
 +----------------------------+---------------------------------------------------------------+
 ```
 
@@ -194,21 +220,21 @@ typedef struct Queue {
 +------------------------------------------+---------------------------------------------------------------+
 |                Funktion                  |                     Beschreibung                              |
 +==========================================+===============================================================+
-| queue_new()                             | Initialisiert neue Queue, reserviert Speicher                 |
+| queue_new()                             | Initialisiert neue Queue, reserviert Speicher                  |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_enqueue(queue, value)             | Fügt Element am Ende ein                                     |
+| queue_enqueue(queue, value)             | Fügt Element am Ende ein                                       |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_dequeue(queue, &value)            | Entfernt erstes Element (FIFO), gibt Wert zurück              |
+| queue_dequeue(queue, &value)            | Entfernt erstes Element (FIFO), gibt Wert zurück               |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_peek(queue, &value)               | Gibt erstes Element zurück, ohne es zu entfernen             |
+| queue_peek(queue, &value)               | Gibt erstes Element zurück, ohne es zu entfernen               |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_is_empty(queue)                   | Überprüft, ob Queue leer ist                                 |
+| queue_is_empty(queue)                   | Überprüft, ob Queue leer ist                                   |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_length(queue)                     | Gibt Anzahl der Elemente zurück                              |
+| queue_length(queue)                     | Gibt Anzahl der Elemente zurück                                |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_print(queue)                       | Gibt Queue aus: [10, 20, 30]                                |
+| queue_print(queue)                       | Gibt Queue aus: [10, 20, 30]                                  |
 +------------------------------------------+---------------------------------------------------------------+
-| queue_free(queue)                       | Gibt gesamten Speicher frei                                  |
+| queue_free(queue)                       | Gibt gesamten Speicher frei                                    |
 +------------------------------------------+---------------------------------------------------------------+
 ```
 
